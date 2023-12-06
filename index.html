@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<!--meta for the browser to allow for mobile first design-->
+<meta charset="utf-8"/>
+<meta content="initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+<title>
+   Miami-Dade County Storm Safe
+  </title>
+<style>
+   html,
+    body,
+    #viewDiv {
+     padding: 0;
+     margin: 0;
+     height: 100%;
+     width: 100%;
+    }
+
+.surveyBtn {
+  display: inline-block;
+  margin: 10px;
+  background-color: #5a4ae3;
+  color: #FCFBF4;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.surveyBtn:hover {
+  background-color: #3e33a8;
+}
+
+.filterBTN {
+        display: inline-block;
+        margin: 10px;
+        background-color: #5a4ae3;
+        color: #FCFBF4;
+        padding: 4px 8px;
+        border: none;
+        border-radius: 4px;
+        font-size: 12px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .filterBTN:hover {
+        background-color: #3e33a8;
+    }
+
+body { background-color: #FCFBF4; 
+    color: #5a4ae3;
+
+    font-family: "Helvetica", sans-serif;
+}
+
+</style>
+<!--importing thr css and libraries for esri.js-->
+<link href="https://js.arcgis.com/4.27/esri/themes/light/main.css" rel="stylesheet"/>
+<script src="https://js.arcgis.com/4.27/">
+</script>
+<!--loading the modules-->
+
+</script>
+<script>
+   require(["esri/config" ,"esri/Map", "esri/views/MapView", "esri/widgets/Locate", "esri/widgets/Search", "esri/layers/FeatureLayer", "esri/widgets/Legend", "esri/widgets/Editor", "esri/widgets/Expand"], (esriConfig, Map, MapView, Locate, Search, FeatureLayer, Legend, Editor, Expand) => {
+            
+            //adding in API Key
+            esriConfig.apiKey = "AAPK50bd33a7f78c4bd98439817346c45150YxOaoF_yiyzXk7-A7yCiGXxGKE8ywmKK9LJdIaiT30z5N5ry4n9ghqL74FTTcDK7";
+
+            //creating the map
+            const map = new Map({
+                basemap: "osm"
+            });
+
+             //This block of code centers on MDC and sets the zoom
+             const view = new MapView({
+                container: "viewDiv",  
+                    map: map, 
+                    center: [ -80.20469, 25.76091],  // Lon and lat of MDC
+                    zoom: 9.5
+                });
+            
+            //create the const for the search widget
+             const searchWidget = new Search({
+             view: view
+             });
+
+            //add and position the search widget
+            view.ui.add(searchWidget, {
+            position: "top-right",
+            });
+            
+            //create the const for the locate widget
+            const locateBtn = new Locate({
+                view: view
+            });
+
+            // Add the locate widget to the top right corner of the view
+            view.ui.add(locateBtn, {
+                position: "top-right"
+            });
+
+            // Add legend widget
+            const legend = new Legend({
+            view: view,
+            style: "card"
+            });
+
+            // Create an Expand widget for the Legend
+            const legendExpand = new Expand({
+            view: view,
+            content: legend,
+            expandIconClass: "esri-icon-layer-list",
+            group: "bottom-left"
+            });
+
+            view.ui.add(legendExpand, "bottom-left")
+
+// Define a pop-up for the hospitals layer
+const popupHospital = {
+    "title": "Hospital Information",
+    "content": "<b>Name:</b> {NAME}<br>" +
+               "<b>Address:</b> {ADDRESS}<br>" +
+               "<b>City:</b> {CITY}, <b>ZIP Code:</b> {ZIPCODE}<br>" +
+               "<b>Phone:</b> {PHONE}<br>" +
+               "<b>Status:</b> {STATUS}<br>" +
+               "<b>Bed Count:</b> {BED}<br>" +
+               "<b>Emergency Room:</b> {EROOM}<br>"
+};
+
+// Adding hosted data to the layer
+window.hospitalLayer = new FeatureLayer({
+    url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/MDCSS/FeatureServer/0",
+    outFields: ["NAME", "ADDRESS", "CITY", "ZIPCODE", "PHONE", "STATUS", "BED", "EROOM"],
+    popupTemplate: popupHospital
+});
+
+// Adding the constructor for the feature layer
+map.add(hospitalLayer);
+
+
+const popupShelter = {
+    "title": "Storm Shelter Information",
+    "content": "<b>Name:</b> {NAME}<br>" +
+               "<b>Address:</b> {ADDRESS}<br>" +
+               "<b>City:</b> {CITY}, <b>ZIP Code:</b> {ZIPCODE}<br>" +
+               "<b>Phone:</b> {PHONE}<br>" +
+               "<b>Status:</b> {STATUS}<br>" +
+               "<b>Capacity:</b> {CAPACITY}"
+};
+
+    // Adding hosted data to the layer
+window.shelterLayer = new FeatureLayer({
+    url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/MDCSS/FeatureServer/1",
+    outFields: ["NAME", "ADDRESS", "CITY", "ZIPCODE", "PHONE", "STATUS", "CAPACITY"],
+    popupTemplate: popupShelter
+});
+
+// Adding the constructor for the feature layer
+map.add(shelterLayer);
+
+// Define a pop-up for the Fire and EMS layer
+const popupFireEMS = {
+    "title": "Fire and EMS Information",
+    "content": "<b>Name:</b> {NAME}<br>" +
+               "<b>Address:</b> {ADDRESS}<br>" +
+               "<b>City:</b> {CITY}, <b>ZIP Code:</b> {ZIPCODE}<br>"
+};
+
+// Adding hosted data to the layer
+window.fireEmsLayer = new FeatureLayer({
+    url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/MDCSS/FeatureServer/2",
+    outFields: ["NAME", "ADDRESS", "CITY", "ZIPCODE"],
+    popupTemplate: popupFireEMS
+});
+
+// Adding the constructor for the feature layer
+map.add(fireEmsLayer);
+
+// Create the Editor widget
+const editor = new Editor({
+      view: view,
+      container: "editorDiv",
+    });
+
+    editor.layerInfos = [
+      {
+        layer: hospitalLayer,},{
+        layer: shelterLayer,
+      },{
+        layer: fireEmsLayer,
+      }];
+
+      // Create an Expand widget for the Editor
+    const editorExpand = new Expand({
+      view: view,
+      content: editor,
+      expandIconClass: "esri-icon-edit",  // Icon for the expand widget
+      group: "top-left"
+    });
+
+    // Add the Editor widget to the view
+    view.ui.add(editorExpand, "top-right");
+
+        });
+
+  </script>
+
+</head>
+<body>
+    <div style="text-align: center;">
+        <img src="https://raw.githubusercontent.com/juliannesay/mdcss/main/Miami%20Dade%20County%20Storm%20Safe-logos_transparent.png" alt="Miami-Dade County Storm Safe" style="max-width: 25%; height: 25%;" />
+    </div>
+  <!--create div to store the buttons above the filter-->
+<div style="max-width: 700px; margin: 5px auto; text-align: center;"><a class="surveyBtn" href="https://survey123.arcgis.com/share/5659b5c6c7c647b29701a6a0a16ce585">Launch the Storm Safe Miami Loved One Safety Status Survey</a><a class="surveyBtn" href="https://uw-mad.maps.arcgis.com/home/item.html?id=65495525d8744057bb541c26180f27a4#data">Check Status</a></div> 
+<!--create div for the filter-->
+<div id="filter-section" style="text-align:center; margin-bottom:20px;">
+    <h3>Layer Visibility and Status Filter:</h3>
+    
+    <!-- Layer visibility checkboxes -->
+    <input id="toggle-hospitals" type="checkbox" checked/><label for="toggle-hospitals">Hospitals</label>
+    <input id="toggle-shelters" type="checkbox" checked/><label for="toggle-shelters">Shelters</label>
+    <input id="toggle-fire-ems" type="checkbox" checked/><label for="toggle-fire-ems">Fire and EMS</label>
+
+    <!-- Hospital Status filter -->
+<h4>Hospital Status:</h4>
+<input id="filter-hospital-closed" type="checkbox" value="C"/><label for="filter-hospital-closed">Closed or Outage</label>
+<input id="filter-hospital-permanent" type="checkbox" value="P"/><label for="filter-hospital-permanent">Permanent</label>
+<input id="filter-hospital-temporary" type="checkbox" value="T"/><label for="filter-hospital-temporary">Temporary</label>
+
+<!-- Shelter Status filter -->
+<h4>Shelter Status:</h4>
+<input id="filter-shelter-active" type="checkbox" value="A"/><label for="filter-shelter-active">Active</label>
+<input id="filter-shelter-closed" type="checkbox" value="C"/><label for="filter-shelter-closed">Closed (Post-Storm)</label>
+<input id="filter-shelter-full" type="checkbox" value="F"/><label for="filter-shelter-full">Full</label>
+<input id="filter-shelter-inactive" type="checkbox" value="I"/><label for="filter-shelter-inactive">Inactive</label>
+<input id="filter-shelter-limited" type="checkbox" value="L"/><label for="filter-shelter-limited">Limited Services Remain</label>
+<input id="filter-shelter-other" type="checkbox" value="O"/><label for="filter-shelter-other">Other</label>
+
+    <br/><br/><button id="clear-filters" class="filterBTN">Clear Filters</button></div><div id="viewDiv" style="max-width: 900px; height: 600px; margin: 20px auto;">
+</div>
+<div id="tableDiv"></div>
+</script><script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Toggle Layer Visibility
+    document.getElementById("toggle-hospitals").addEventListener("change", function() {
+        hospitalLayer.visible = this.checked;
+    });
+    document.getElementById("toggle-shelters").addEventListener("change", function() {
+        shelterLayer.visible = this.checked;
+    });
+    document.getElementById("toggle-fire-ems").addEventListener("change", function() {
+        fireEmsLayer.visible = this.checked;
+    });
+
+    // Update filter for Hospital Status
+    const hospitalStatusCheckboxes = document.querySelectorAll("#filter-section input[type='checkbox'][id^='filter-hospital-']");
+    hospitalStatusCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener("change", updateHospitalFilter);
+    });
+
+    // Update filter for Shelter Status
+    const shelterStatusCheckboxes = document.querySelectorAll("#filter-section input[type='checkbox'][id^='filter-shelter-']");
+    shelterStatusCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener("change", updateShelterFilter);
+    });
+
+    // Fire and EMS layer does not have a status filter, so no additional script needed
+
+    // Clear Filters Button
+    document.getElementById("clear-filters").addEventListener("click", function() {
+        // Reset checkboxes
+        const allCheckboxes = document.querySelectorAll("#filter-section input[type='checkbox']");
+        allCheckboxes.forEach(checkbox => {
+            checkbox.checked = false;
+        });
+
+        // Reset layer visibility
+        hospitalLayer.visible = true;
+        shelterLayer.visible = true;
+        fireEmsLayer.visible = true;
+
+        // Reset filters
+        updateHospitalFilter();
+        updateShelterFilter();
+    });
+
+    // Function to update Hospital layer filter
+    function updateHospitalFilter() {
+        let selectedStatuses = [];
+        hospitalStatusCheckboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                selectedStatuses.push(`STATUS = '${checkbox.value}'`);
+            }
+        });
+        const filterExpression = selectedStatuses.join(" OR ") || null;
+    console.log("Hospital Filter Expression: ", filterExpression);
+        hospitalLayer.definitionExpression = selectedStatuses.join(" OR ") || null;
+    }
+
+    // Function to update Shelter layer filter
+    function updateShelterFilter() {
+        let selectedStatuses = [];
+        shelterStatusCheckboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                selectedStatuses.push(`STATUS = '${checkbox.value}'`);
+            }
+        });
+        const filterExpression = selectedStatuses.join(" OR ") || null;
+    console.log("Shelter Filter Expression: ", filterExpression);
+        shelterLayer.definitionExpression = selectedStatuses.join(" OR ") || null;
+    }
+});
+
+</script></body>
+</html>
