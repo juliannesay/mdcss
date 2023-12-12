@@ -53,9 +53,22 @@
     }
 
 body { background-color: #FCFBF4; 
-    color: #5a4ae3;
+        color: #5a4ae3;
+        font-family: "Trebuchet MS", sans-serif;
+        background-image: url('https://github.com/juliannesay/mdcss/blob/main/smooth-white-stucco-wall.jpg?raw=true');
+        background-repeat: repeat;
+        position: relative;
+}
 
-    font-family: "Helvetica", sans-serif;
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(252, 251, 244, 0.65);
+    z-index: -1;
 }
 
 </style>
@@ -121,6 +134,27 @@ body { background-color: #FCFBF4;
 
             view.ui.add(legendExpand, "bottom-left")
 
+
+// Define a pop-up for the 'Events Ordered by Size and Severity' layer
+const popupEvents = {
+    "title": "Event Information",
+    "content": "<b>Type:</b> {Event}<br>" +
+               "<b>Severity:</b> {Severity}<br>" +
+               "<b>Summary:</b> {Summary}<br>" +
+               "<b>Last Updated:</b> {Updated}<br>" +
+               "<b>Effective Time:</b> {Start}<br>" +
+               "<b>Expiration Time:</b> {End_}<br>"
+};
+
+// Adding 'Events Ordered by Size and Severity' layer to the map
+window.eventsLayer = new FeatureLayer({
+    url: "https://services9.arcgis.com/RHVPKKiFTONKtxq3/arcgis/rest/services/NWS_Watches_Warnings_v1/FeatureServer/6",
+    outFields: ["Event", "Severity", "Summary", "Updated", "Start", "End_"],
+    popupTemplate: popupEvents
+});
+
+// Adding the new layer first to ensure it is in the back
+map.add(eventsLayer);
 // Define a pop-up for the hospitals layer
 const popupHospital = {
     "title": "Hospital Information",
@@ -172,15 +206,34 @@ const popupFireEMS = {
                "<b>City:</b> {CITY}, <b>ZIP Code:</b> {ZIPCODE}<br>"
 };
 
-// Adding hosted data to the layer
+// Adding fire and ems layer to the map
 window.fireEmsLayer = new FeatureLayer({
     url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/MDCSS/FeatureServer/2",
     outFields: ["NAME", "ADDRESS", "CITY", "ZIPCODE"],
     popupTemplate: popupFireEMS
 });
 
-// Adding the constructor for the feature layer
+// Adding the constructor for the fire and ems layer
 map.add(fireEmsLayer);
+
+// Define a pop-up for the Hazards layer
+const popupHazards = {
+    "title": "Hazard Information",
+    "content": "<b>Type:</b> {Hazard_Type}<br>" +
+               "<b>Comments:</b> {Comments}<br>" +
+               "<b>Latitude:</b> {Latitude}<br>" +
+               "<b>Longitude:</b> {Longitude}<br>"
+};
+
+// Adding hosted data to the layer
+window.hazardsLayer = new FeatureLayer({
+    url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/MDCSS/FeatureServer/6",
+    outFields: ["Hazard_Type", "Comments", "Latitude", "Longitude"],
+    popupTemplate: popupHazards
+});
+
+// Adding the constructor for the feature layer
+map.add(hazardsLayer);
 
 // Create the Editor widget
 const editor = new Editor({
@@ -194,7 +247,9 @@ const editor = new Editor({
         layer: shelterLayer,
       },{
         layer: fireEmsLayer,
-      }];
+      },{
+        layer: hazardsLayer,
+      },];
 
       // Create an Expand widget for the Editor
     const editorExpand = new Expand({
@@ -226,6 +281,9 @@ const editor = new Editor({
     <input id="toggle-hospitals" type="checkbox" checked/><label for="toggle-hospitals">Hospitals</label>
     <input id="toggle-shelters" type="checkbox" checked/><label for="toggle-shelters">Shelters</label>
     <input id="toggle-fire-ems" type="checkbox" checked/><label for="toggle-fire-ems">Fire and EMS</label>
+    <input id="toggle-hazards" type="checkbox" checked/><label for="toggle-hazards">Hazards</label>
+    <input id="toggle-events" type="checkbox" checked/><label for="toggle-events"> Weather Events</label>
+
 
     <!-- Hospital Status filter -->
 <h4>Hospital Status:</h4>
@@ -242,9 +300,25 @@ const editor = new Editor({
 <input id="filter-shelter-limited" type="checkbox" value="L"/><label for="filter-shelter-limited">Limited Services Remain</label>
 <input id="filter-shelter-other" type="checkbox" value="O"/><label for="filter-shelter-other">Other</label>
 
+<!-- Inside the filter-section div -->
+<h4>Reported Hazard Types:</h4>
+<input id="filter-hazard-electric" type="checkbox" value="E"/><label for="filter-hazard-electric">Downed Electric Pole/Wire</label>
+<input id="filter-hazard-flood" type="checkbox" value="F"/><label for="filter-hazard-flood">Flooded Street</label>
+<input id="filter-hazard-tree" type="checkbox" value="T"/><label for="filter-hazard-tree">Downed Tree</label>
+<input id="filter-hazard-other" type="checkbox" value="O"/><label for="filter-hazard-other">Other</label>
+
+<h4>Weather Events By Severity:</h4>
+<select id="filter-event-severity">
+    <option value="">All Severities</option>
+    <option value="Minor">Minor</option>
+    <option value="Moderate">Moderate</option>
+    <option value="Severe">Severe</option>
+    <option value="Extreme">Extreme</option>
+</select>
+
+
     <br/><br/><button id="clear-filters" class="filterBTN">Clear Filters</button></div><div id="viewDiv" style="max-width: 900px; height: 600px; margin: 20px auto;">
 </div>
-<div id="tableDiv"></div>
 </script><script>
 document.addEventListener("DOMContentLoaded", function() {
     // Toggle Layer Visibility
@@ -257,6 +331,13 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("toggle-fire-ems").addEventListener("change", function() {
         fireEmsLayer.visible = this.checked;
     });
+    document.getElementById("toggle-hazards").addEventListener("change", function() {
+    hazardsLayer.visible = this.checked;
+    });
+    document.getElementById("toggle-events").addEventListener("change", function() {
+    eventsLayer.visible = this.checked;
+    });
+
 
     // Update filter for Hospital Status
     const hospitalStatusCheckboxes = document.querySelectorAll("#filter-section input[type='checkbox'][id^='filter-hospital-']");
@@ -270,7 +351,11 @@ document.addEventListener("DOMContentLoaded", function() {
         checkbox.addEventListener("change", updateShelterFilter);
     });
 
-    // Fire and EMS layer does not have a status filter, so no additional script needed
+    // Event listeners for Hazard Type checkboxes
+    const hazardTypeCheckboxes = document.querySelectorAll("#filter-section input[type='checkbox'][id^='filter-hazard-']");
+    hazardTypeCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener("change", updateHazardsFilter);
+    });
 
     // Clear Filters Button
     document.getElementById("clear-filters").addEventListener("click", function() {
@@ -315,6 +400,29 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log("Shelter Filter Expression: ", filterExpression);
         shelterLayer.definitionExpression = selectedStatuses.join(" OR ") || null;
     }
+
+    // Function to update Hazards layer filter
+function updateHazardsFilter() {
+    const hazardTypeCheckboxes = document.querySelectorAll("#filter-section input[type='checkbox'][id^='filter-hazard-']");
+    let selectedTypes = [];
+    hazardTypeCheckboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+            selectedTypes.push(`Hazard_Type = '${checkbox.value}'`);
+        }
+    });
+    hazardsLayer.definitionExpression = selectedTypes.join(" OR ") || null;
+}
+
+function updateEventsFilter() {
+        const selectedSeverity = document.getElementById('filter-event-severity').value;
+        eventsLayer.definitionExpression = selectedSeverity ? `Severity = '${selectedSeverity}'` : null;
+    }
+
+    // Event listener for the severity filter
+    document.getElementById('filter-event-severity').addEventListener('change', function() {
+        updateEventsFilter();
+    });
+
 });
 
 </script></body>
