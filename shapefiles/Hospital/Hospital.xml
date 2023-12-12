@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><metadata>
+    <idinfo>
+        <keywords>
+            <theme>
+                <themekt>None</themekt>
+                <themekey>Florida</themekey>
+                <themekey>Miami-Dade County</themekey>
+                <themekey>MDC</themekey>
+                <themekey>County Government</themekey>
+                <themekey>Local Government</themekey>
+                <themekey>WGS84</themekey>
+                <themekey>Health</themekey>
+                <themekey>Hospital</themekey>
+                <themekey/>
+                <themekey>ITD</themekey>
+                <themekey>Information Technology Department</themekey>
+                <themekey/>
+                <themekey>Wellness</themekey>
+            </theme>
+        </keywords>
+        <accconst>None</accconst>
+        <useconst>None</useconst>
+    </idinfo>
+    <metainfo>
+        <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+        <metstdv>FGDC-STD-001-1998</metstdv>
+        <mettc>local time</mettc>
+    </metainfo>
+</metadata>

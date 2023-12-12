@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?><metadata>
+    <idinfo>
+        <citation>
+            <citeinfo>
+                <origin/>
+                <title>esde1.DCPS.SchoolSite</title>
+                <geoform>vector digital data</geoform>
+            </citeinfo>
+        </citation>
+        <descript>
+            <abstract>A point feature class of the Miami-Dade County Public Schools facilities.Updated: Quarterly The data was created using: Projected Coordinate System: WGS_1984_Web_Mercator_Auxiliary_SphereProjection: Mercator_Auxiliary_Sphere</abstract>
+            <purpose>A point feature class of the Miami-Dade County Public Schools facilities.</purpose>
+            <supplinf>Procedures_Used:
+This data is recieved from the Miami-Dade Public Schools as an Excel Spreadsheet. From time to time, The Miami-Dade Public School Website is used to  verify and/or confirm data.
+
+
+Revisions:
+Date: July 2023
+Reason: Updated Public School locations and Grades based of Documentation provided by Ignacio Cano
+
+Date: April 2023     By: Ignacio Cano &amp; Alexander Mattis
+Reason: Herbert A. Ammons Middle School, has moved to a temporary location (17475 SW 157th Ave, Miami, FL 33187) just for this school year 
+
+Date: April 2023     By: Ignacio Cano &amp; Alexander Mattis
+Reason: Updated School Site locations/Grades/Capacity/ &amp; Enrollment based of a shapefile provided by Ignacio Cano
+
+Date: November 2021     By: Ignacio Cano &amp; Alexander Mattis
+Reason: Updated Public School locations and Grades based of Documentation provided by Ignacio Cano
+
+Date: August 2019  By: Ignacio Cano &amp; Jeffrey Ruiz
+Reason; Update.  Provided shapefile was moved to production. 
+
+Date:November 9, 2018             By: I Rodriguez
+Per NSD #513913 John I. Smith K-8 (2nd Floor) change from 6-8 to K-8 for categorizing schools in the 9-1-1 system (ELEM, MIDD, SR) by Josh Brashears
+
+
+Date: October 30, 2018             By: M.Mastrapa
+Updated by NSD GIS ticket  #513913, change Type E  to MIDD, This is for categorizing schools in the 9-1-1 system. 
+Data has been updated based on phone calls, Google search Map, PA Address verification, and FC GeoAddress. Zip codes have been verified by USPS and with our GCDR.
+
+Date: October 30, 2018             By: I Rodriguez
+Updated by NSD GIS Production Data ticket #514678, change Dr. Martin Luther King @ Liberty City PCL to "Dr. Martin Luther King @ Liberty City PLC". 
+
+
+Date: Oct. 1st  2018             By: Ignacio Cano &amp; Marina Mastrapa
+Updated enrollment
+Educational Alternative Outreach Program,Early Childhood, ESE and Tiitle,Ethel Koger Beckham K-8 Center,West Lakes Preparatory Academy.
+Capacity: Ethel Koger Beckham K-8 Center,West Lakes Preparatory Academy,
+Grades :C.O.P.E. Center North,Ethel Koger Beckham K-8 Center
+Point was relocated to the entrance of the school.
+Carrie P.  Meek/Westview K-8 Center          2101 NW 127TH ST, Miami Dade,33167
+Carrie P   Meek/Westview K-8 Center Annex 1901 NW 127TH ST, Miami Dade 33167
+New School: Kendall Square K-8 Center 9325 SW 169TH PLACE, Miami Dade 33196
+Changed name for location: From Dr. Bowman Ashe-Doolin PLC_N changed to CRISTINA M. EVE PLC-N (ID-1691),  From Ethel Koger Beckham Elementary to Ethel Koger Beckham K-8 Center
+From Dr. Bowman Ashe-Doolin K-8 to Doolin/Bowman Foster Ashe Elementary
+There were no changes last update on May 31,2018 
+Chapman House, Dr. Martin Luther King  @ Liberty City PCL, Dr. Marvin Dunn Academy For Community Education, Florida Diagnostic and Learning Resources System/South
+Madie Ives K-8 Preparatory Academy, Miami-Dade Online Academy
+
+
+Date: May 31, 2018             By: Ignacio Cano
+Corrected address for Miami-Dade Online Academy: from 1501 NW 2ND Avenue to 1501 NE 2ND Avenue
+Corrected ordinal suffix: 526 NW 13RD St.  to "526 NW 13TH St.
+Corrected ordinal suffix: from 6521 SW 62th Ave to 6521 SW 62ND Ave.
+Changed name from Madie Ives Elementary to Madie Ives K-8 Preparatory Academy
+Changed name from Dr. Martin Luther King PCL to Dr. Martin Luther King  @ Liberty City PCL
+Changed name from PLC at Former MacArthur North to West Lakes Preparatory Academy
+Changed name from Academy for Community Education to Dr. Marvin Dunn Academy for Community Education 
+Changed name from Amelia Earhart Jr High School to Amelia Earhart Elementary
+Changed ID number from 0561 to 5005 to David Lawrence Jr. K-8 Center PLC South Campus
+
+
+Date: January 26, 2018             By: Ignacio Cano
+Added new locattion: Dr. Toni Bilbao Preparatory Academy - 8905 NW 114 AVE Doral, 33178 - (305)-863-5750
+Assigned PLC-N 1(16251 SW 72ND ST) from Doolin/Ashe K-8 Center (0451) to Christina M. Eve Elementary (1691)
+changed address for Educational Alternative Outreach Program 6210 NW 27 AVE to 6300 NW 27 AVE.
+Changed name for location 9731 from Instructional Systemwide to Early Childhood, ESE and Title.
+Updated enrollment, capacity, and grades fields. 
+
+
+Date Jan 2018
+Reason:New School Dr. Toni Bilbao Preparatory Academy and Early Childhood, ESE and Tiitle, Educational Alternative Outreach Program was updated
+
+Date: June 2017      By: Ignacio Cano
+Reason:  to change the name of the following facility:
+3001 PLC @ Former MacArthur North to West Lakes Preparatory Academy
+
+Date: December 2016    By I. Rodriguez
+FC (points) have been re-located/moved to the center/close of the building
+ID 1721 Everglades K-8 Center name changed to Everglades K-8 Center Lower Academy - 8375 SW 16TH ST Miami, FL 33155 (http://evergladesk8.dadeschools.net/images/LowerAcademy.jpg
+ID 9412 Information Technology Services name changed to Dade County Public School-Management Information - 13135 SW 26th St, Miami, FL 33175 - (954) 462-2530
+ID 8012 Pace Center for Girls - 5120 NW 20 AVENUE changed to 1400 NW 36th St
+http://www.pacecenter.org/locations/miami
+ID 7381 Miami Norland Senior High - 1050 NW 195TH ST has a Wrong address, the correct address is 1193 NW 193rd St, Miami Gardens, FL 33169
+Add new school ID 1721 Everglades K-8 Center Upper Academy – 8300 SW 14th St Miami, FL 33155 (http://evergladesk8.dadeschools.net/images/UpperAcademy.jpg)
+
+November 2016       By I. Rodriguez
+Few points have been re-located/moved to the center/close of the building.
+Updated the GRADES field from "7-8" to "6-8" for John I. Smith K-8 (2nd Floor) at 5005 NW 112TH AVE. Also please update the GRADES from "PK-8" to "PK-5" for John I. Smith K-8 Center at 10415 NW 52ND ST
+Spelling Corrected: Academic for Advanced Academics – North to Academy for Advanced Academics – North - 11200 SW 8TH ST #VH-130
+
+Name change from 
+Biscayne Nature Center to Marjory Stoneman Douglas Biscayne Nature Center - 6747 Crandon Blvd, Key Biscayne, FL 33149 - (305) 361-6767 - http://www.biscaynenaturecenter.org/
+Coral Way K-8 Center aka Coral Way Bilingual K-8 Center - 1950 SW 13TH AVE
+Doolin/Ashe K-8 Center aka Bowman Foster Ashe Elementary - 6601 SW 152ND AVE - (305) 386-6667
+
+October 2016       By I. Rodriguez
+Reason: Added new sites
+PLC at Former MacArthur North - 13835 NW 97TH AVENUE - 305-826-1989
+Florida Diagnostic and Learning Resources System/South - 6521 SW 62 AVE - 305-274-3501
+Address have been change for Greynolds Park Elementary PLC-C - 1575 NE 179TH ST to 1575 NE 177TH ST
+
+Date: June 2016           By I. Rodriguez
+Reason: Added new locattion 
+• School For Advanced Studies West - 3800 NW 115th Ave - Doral - 305-237-8000
+Ref: http://www.mdc.edu/west/
+
+Changed name from West Homestead Elementary to West Homestead K-8 Center
+Spelling corrected • Air Base K-8 Center for Internantional Education to International
+
+Date: October 2015      By: I. Rodriguez
+Reason: Address changed for David Lawrence Jr. K-8 Center, per Jenny E. Murillo, Director, Miami-Dade County Public Schools Department of Educational Facilities and Planning, (As of August 2015, the PLC was taken from W.J. Bryan ES and it is now affiliated with David Lawrence Jr. K-8 Center (Loc. 5005) located at 15000 Bay Vista Blvd.)
+
+Date:  August 27, 2015   By: Ignacio Cano
+Reason:To change the name of the following facilities:
+
+• 0661 Caribbean K-8 Center
+• 1281 Cypress K-8 Center
+• 4651 Ethel F. Beckford/Richmond Primary Learning Center
+• 5081 Dr. Frederica S. Wilson/Skyway Elementary
+• 6011 Georgia Jones-Ayers Middle
+• 6052 Miami Arts Studio  6-12 at Zelda Glazer
+• 6081 Cutler Bay Senior High
+• 6111 Cutler Bay Middle
+• 8017 Educational Alternative Outreach Program
+
+To add two new program locations
+• 9071 Academic for Advanced Academics - North
+• 9071 Academic for Advanced Academics - South
+
+Updated Enrollment, Capacity, and Region information
+Updated location for 8012 Pace Center for Girls
+Deleted location 4081 Miami-Dade County Public Schools PLC and updated grade configuration to 7581 iPrep Academy to PK-12. 
+
+Date:  April 10th, 2015   By: Ignacio Cano
+Reason:
+To add the following off-site facilities:
+
+John I. Smith K-8  at  5005 NW 112th Ave Doral, FL 33178 – 2nd Floor 7th &amp; 8th Graders 
+Ronald Reagan South Campus  at 5005 NW 112th Ave Doral, FL  33178 – 3rd Floor 9th Graders 
+Aventura Waterways K-8 Center (annex) at  750 Ives  Dairy Rd Miami , FL 33179  6th, 7th, and Graders. 
+
+Date: February 19th, 2015          By: Ignacio Cano
+Reason: Procedures used for this revision: data collected from: membership report, school openings report, school land inventory report, FLDOE Master School ID website, Miami-Dade County Public Schools website, ITS school location report, and percent utilization report.  
+
+To add a new field “opened” to indicate the date school initially opened.
+
+To add the following administrative and educational facilities:
+7008 Biotech@Richmond Heights 9-12 High School
+9485 Biscayne Nature Center
+9797 Chapman House
+9001 Former Region Office/Warehouse
+9411 ITS Annex Warehouse
+9239 John H Schee Transportation Center
+9221 Maintenance Operations Plant Operations Center
+7031 MAST @ FIU Biscayne Bay Campus
+9134 Materials Control Center
+9938 Mdcps Police General Investigations Unit
+8211 Nathaniel Traz Powell Football Stadium
+8231 North Miami Stadium
+8012 Pace Center for Girls
+9251 Region Maintenance Center 1 &amp; 2
+9271 Region Maintenance Center 3
+9281 Region Maintenance Center 4
+9264 Region Maintenance Center 5
+9261 Region Maintenance Center 6
+9575 South Region Office Annex
+9181 Stores And Distribution Complex
+9230 Transportation Center Administrative Offices
+9231 Transportation Center Central East
+9237 Transportation Center Central West
+9232 Transportation Center North
+9234 Transportation Center Northeast
+9236 Transportation Center Northwest
+9233 Transportation Center South
+9235 Transportation Center Southwest
+9292 Transportation Center Vehicle Maintenance Office
+9292 Transportation Redland Vehicle Maintenance
+
+To change the name of the following facilities:
+• 0041 Airbase Elementary to Air Base K-8 Center for International Education
+• 0441 Blue Lakes Elementary to Blue Lakes K-8 Center
+• 8139 D.A. Dorsey Educational Center to D.A. Dorsey Technical College
+• 9573 Central Region Office to District Office/Charter School
+• 4381 Perrine Elementary to Dr. Henry E. Perrine Academy of the Arts
+• 7801 George T. Baker Aviation to George T. Baker Aviation Technical College
+• 8005 Lindsey Hopkins Technical Education Center to Lindsey Hopkins Technical College
+• 8901 Miami Lakes Educational Center Vocational to Miami Lakes Educational Center and Technical College
+• 1441 Paul Laurence Dunbar Elementary to Paul Laurence Dunbar K-8 Center
+• 8911 Robert Morgan Educational Center Vocational to Robert Morgan Educational Center and Technical College
+• 7702 South Dade Adult Education Center Main Campus to South Dade Technical College
+• 4071 Olinda Elementary to Agenoria S. Paschal/ Olinda Elementary School
+• 6081 Centennial Middle to Cutler Bay Academy Of Advanced Studies, Centennial Campus
+• 6111 Cutler Ridge Middle to Cutler Bay Academy Of Advanced Studies, Cutler Ridge Campus
+• 7002 Miami Beach Adult Education to Miami Beach Adult &amp; Community Education Center
+• 7272 Miami Coral Park Adult Education &amp; Community Education Center to Miami Coral Park Adult Education
+• 7462 Miami Senior Adult Education Center to Miami Senior Adult Education
+• 7512 Miami Springs Adult &amp; Community Center to Miami Springs Adult Education
+• 7592 North Miami Adult Education Center to North Miami Adult Education
+• 8981 South Dade Adult Education Skills Center Campus to South Dade Skill Center
+• 7742 Southwest Miami Adult Education to Southwest Miami Adult Center
+
+To change location number of the following facility:
+• 2621 J.W. Johnson Elementary/James H. Bright Elementary to 0481
+
+To change name and location number of the following facilities:
+• 6151 Doral Middle to 9574 Central Region Office                       
+• 6481 Miami Edison Middle to 7021 International Education Academy
+• 6482 Miami Edison Middle 7005 iTech@Thomas A. Edison Education Center
+• 6721 Parkway Middle to 8901 Parkway Educational Complex
+• 6981 Westview Middle to 5901 Carrie P. Meek/Westview K-8 Center Annex
+
+To delete the following facilities:
+
+• 6141 Charles R. Drew Middle
+• 9572 Former Regional Center II
+ 
+
+Date: October 26th, 2012             By: Ignacio Cano
+Reason: To update the following:
+  -   Name update of  Thena C. Crowder Elementary  (2531)
+  -   Location update of North Dade Center For Modern Languages Elementary (5131)
+  -   Location update of North Dade Middle (6591)
+  -   Location update of Medical Academy For Science And Technology (7171)
+  -   Location update of Merrick Educational Center (9732)
+  -   Location update of  International Studies Preparatory Academy (7571)
+  -   Addition of  Coral Gables Preparatory Academy MLC (former Merrick Ed Center location) (0961)
+  -   Deleted  Miami Skill Center  Site (8991)
+  
+Date: August 2012  By: Ignacio Cano
+Reason: REGION was changed from schort integer to text in order to accomodate new region codes.
+  
+Date: June 2012    By: Savannah Sill
+Reason: Annual Hurricane season update. Mays Middle School became " Arthur &amp; Polly Mays Conservatory of The Arts"  Location #  7351 and Miami Skill Center is no longer part of the Miami-Dade School Land inventory. The following schools were also removed 500 Role Models Building and School for Applied Technology.
+  
+  Date: Feb 2012      By: Jeffrey Ruiz
+Reason: To add the city and the zipcode to  Marjory Stoneman Douglas Early Childhood Education Center.
+  
+Date: November 2011      By: Jeffrey Ruiz
+Reason: To add a new site for Marjory Stoneman Douglas Early Childhood Education Center.
+  
+Date: January 2011      By: Angel Mesa
+Reason:
+   - Addition of  Auburndale Elementary School PLC-H1 (0121) at 3255 SW 6th Street, Miami, FL 33135, ph:(305)445-3587;
+   - Addition of Smith John I Elementary PLC-A1 (5101) at 10415 NW 52nd St, Doral, FL 33178, ph:(305)406-0220;
+   - Name update of Coral Gables K-8 Preparatory Academy ES (0961), at 105 Minorca Ave, Coral Gables, FL 33134, ph:(305)448-1731;
+   - Name update of Corporate Academy South SH (8201) at 2351 SE 12TH AVE, Homestead, FL 33034;
+   - Name update of Key Biscayne Elementary School (2741) at 150 West McIntyre St, Key Biscayne, FL 33149, ph:(305)361-5418;
+   - Name update of Madie Ives Elementary (2581) at  20770 NE 14TH AVE, MIAMI, FL 33179, ph:(305)651-3155;
+   - Updated the enrollment for all schools and some phone numbers.
+  
+Date: August 2010       By: N. Alvarez
+Reason:  To add two new schools 7571 and 7171. Update Enrollment information. 
+  
+Date; July  2010           By: N. Alvarez
+Reason: To Relocate school 6591 North Dade Middle from 800 NE 137th St to 3411 NW 187th St.  Delete Regional Center VI. Drop 'Middle" from 7901 New World School fine Arts Middle.  Juvenile Justice Center located at 3300 NW 27TH AVE, 305-638-5054, 6 to 12 is excluded from this file, so it is not mistaken as an educational facility that the public can attend.  Changes requested by School Attendance of MDCPS.
+  
+Date: June 2010          By: N. Alvarez
+Reason: Corrected address of Frances S. Tucker Elementary from 3500 S DOUGLAS RD to 3500 DOUGLAS RD. Moved Terra Environmental Research Institute Senior High point to correct property (polygon) also property folio number is changed. Added Miami-Dade County Public Schools PLC and SBAB/Annex Senior High.
+  
+Date: April 2010           By: N. Alvarez
+Reason: Updated schools information using MDCPS web site. Added school 2001 deleted by mistake. Changed  Type, Grade or Name to schools 7901, 4691, and  7055. Updated Enrollment and Region information. 
+  
+Date: March 2010        By; N. Alvarez
+Reason: Due to building renovation, 6591 North Dade Middle is being relocated to 800 NE 137th St "Old North Miami SH".
+  
+Date: February 2010    By: N. Alvarez
+Reason: To add Law Enforcement Officers Memorial Senior High site.
+  
+Date: November 2009 By: N. Alvarez
+Reasons: To update site names that were not unique; Campus and Type information was added to NAME for site clarity.
+  
+Date: Sept. 2009         By: N. Alvarez
+Reason: To populate fields; Campus, Grades, and Unit using MDCPS web site. Updated few schools name.  Deleted  0481 James H. Bright Elementary - 2nd Sites and 5030 Sandor Wiener School of Opportunity So.
+  
+Date: Sept. 2009         By: N. Alvarez
+Reason: Structure change: increased "Name" field size from 40 to 75 characters and added fields: Campus, Grades, and Unit.
+  
+Date: August 2009      By: N. Alvarez
+Reason: Data updated before schools open: Add sites 4031, 7048, 7029, 5030, &amp; 7614. Modify/Change name to 8101, 4691, 7631, 7254, 7742, 8121, 3021, 9013, 2861, and 8911. Pending data updates two weeks after schools open.
+  
+Date: July 2009      By: Jeffrey Ruiz
+Reason: Fixed address for Madie Ives Elementary PLC-M from 1351 IVESDAIRY RD. to 1351 IVES DAIRY RD
+  
+Date: June 2009         By: N. Alvarez
+Reason: Deleted  School ID: 8191 No school found in MDCPS website. Fixed misspellings in the names of William H. Turner Technical Adult Edu. and Food &amp; Nutrition Center.
+  
+Date: June 2009         By: Jeffrey Ruiz
+Reason: Changed address for Hialeah Gardens PLC- B to 9749 NW 127TH TER for geocoding purposes. Fixed misspellings in the names of Miami Douglas MacArthur South HS and Miami Douglas MacArthur North HS.
+  
+Date: May 2009         By: N. Alvarez
+Reason: Annual Hurricane Season update. Updated Region value using MDCPS updates.  Pending to add four (4) schools projected to open in 2009: State School, "QQQ1', "YYY1', "TT1' (official names have not yet been assigned by School Board), and "North Miami Senior High" (replacement). Schools are under construction.
+  
+Date: February 2009 By: N. Alvarez
+Reason: To change type of school to 1371 and 2191 from "E" to "E &amp; ECC"
+  
+Date: February 2009 By: N. Alvarez
+Reason: To add administrative sites, change address to school 0341 and 6631, change name to School  2881.  Schools type modified conforming to Dade County Public School naming convention.  Incomplete pending MDCPS updates
+  
+Date: December 2008 By: N. Alvarez
+Reason: The address for Howard A. Doolin Middle School is corrected from 6400 SW 152nd Street to 6401 SW 152nd Ave.
+  
+Date: October 2008      By: N. Alvarez
+Reason: As per special request all Administrative Offices  "A" and non school sites are removed from GIS school file.  Update received  from DCPS.
+  
+Date: August 2008       By: N. Alvarez
+Reason: To update Schools file which includes: Changed name to  0092, 0341, and 6023.  Added 6751, 7191, 0231, 0122, 02111, 6052, 0202, and 0073. Closed 3621 "Naranja Elementary" 2008-2009 school year.  Incomplete  pending MDCPS updates. 
+  
+Date: May 2008           By: N. Alvarez
+Reason: Changed school type for Migrant Education Program at 28205 SW 125th Ave. from 'S' to  'A' 
+  
+Date: January 2008     By: N. Alvarez
+Reason: To increase the length to TYPE to accommodate grade level for school IDs: 0121, 0461, 2111, 2281, 2581, 2661, 3281, 4281, 4511, 5001, 5021 and 5101, there is no separate enrollment reporting for these locations.  Added sites: 7056, 7551, 0092, 0341, 6023, and 9700. Changed  school name Opa Locka Elementary to Dr. Robert B. Ingram Elementary.
+  
+Date: August 2007      By: N. Alvarez
+Reason: To update lschools feature class using lschools MDCPS file. Added regular schools sites: 0311, 2191, 5003, 7049, 6771, and 2371.Other schools site: 7055 and 8022.  Primary Learning Centers (PLC) sites: 0091, 0121, 0451, 0461, 0561, 1371, 2111, 2151, 2281, 2521, 2581, 2661, 3281, 4281, 4511, 5001, 5101,5981, 2371 and 6771. Grades, Capacity, Enrollment, and Region information still pending. Name changed: 1331, 3101, 5241 and 5961. Type changed from 'E' to 'K-8": 2741, 3281, 1331, 3101, 2901, 1721, 5961, 5241, 2701, 5005, 1121, 3421, 3191, 2911, 0761, 0071, and 4691.
+  
+Date: October 2006    By: GIS Technical Support Staff
+Reason: The data was converted from the legacy coverage format to the ArcGIS Geodatabase feature class format.
+  
+Date: October 2006   By: N. Alvarez
+Reason: Robert Morgan Edu. Center with School# 7371, type changed to "S".
+  
+Date: June 2006      By: N. Alvarez
+Reason:  To update lschools data using revised MDCPS school data reload for the month of May. Added: 0125, 6611, 9772, 9773, 9774, 9775, 9776, 9777, and 7241. Deleted 7241 Administration Site located at 1080 Labaron Dr.
+  
+Date: March 2006     By: N. Alvarez
+Reason:  To update lschools file using updated lschools MDCPS file. Name changed: 9261, 1121, 2741, 9281, 5901, 9738, 5861, 2911, 9575, 7371, 9251, 9573, 9410, 9931, 9574, 9742, 9264. 9572, 9619, 9743, 9747, 9746, 9737, 9745, 9736, 9733, 9734, 9735, 9744, 9748, and  8020. Address/name changed: 9020, 9009. 9741, 9576, 9006,9005, 9271, and 9739.  Address changed: 8014, 9611, 8017. 9704,7041,and 9134. Added: 9997. Pending for correct address: 9980 Deleted: Web Development/tech Services 9414 is inactive. Modified Jane Roberts address by removing "SW" and modified Phyliss Ruth Miller folio.
+  
+Date: August 2005    By: N. Alvarez
+Reason:  To update lschools file using updated schools file sent by the School Board. As result of this update fifty (50) schools with location region = '7' were extracted to create Charter Schools coverage. Also fifteen 15 inactive schools deleted: 8991, 0072, 5130, 7053, 7016, 6026, 6007, 4090, 4040, 1070, 1000, 0900, 0119 0110. and 8931. Added sch_num 5005, 9044, 9043, 9305,9624, 9048, 9050, 9761, 9937 and 8020.  Principal names and contact names have been removed from file. Once this coverage is migrated to the new environment  PRINCPAL and CONTACT field will be deleted, also, Sch_num 0081 TYPE changed from M to E on 1/2006.
+  
+Date April   2005    By N. Alvarez
+Reason:  Yearly update, fourteen (14) sites added (charter schools and administrations) for sch_num: 0072, 0102, 0113, 0204, 0520, 4000, 6004, 7007, 7022, 7042, 7053, 7241, 9623, and 9748. sch_num 0119 defered until 06/07. sch_num.  7008 pending for correct location (address). Field ENRLLMNT is added.
+  
+Date February 2005    By My Doan Berman
+Reason:  Major improvement to positional accuracy for use in CAD 9-1-1 application.  Among the changes made:  Three schools were in the wrong cities.  The point for "Neva King Cooper Educational"was moved from Miami to Homestead.  The point for "Laura C. Saunders Elementary" was moved from Miami to Homestead.  The point for "Downtown Miami Charter School" was moved from Florida City to Miami. "Fienberg/Fisher Elementary", "Everglades K-8 Center", and "Miami Gardens Elementary" were moved from between 0.5 miles to 0.75 miles to their correct locations.  "Archimedean Academy" was updated to reflect the move of the school from 10870 SW 113 PL to 12425 SW 72 ST.  The point for Miami Skill Center was deleted because it does not exist anymore - it was merged with Lindsey Hopkin Technical School.  Also, a few names were updated in minor ways, especially administrative offices.  Many points were moved over the correct building if known, otherwise simply over the correct property for properties with multiple buildings.  Addresses were USPS standardized to include ordinal suffix X-COORD and Y-COORD were updated.
+  
+Date: July 2004       By: N. Alvarez
+Reason:  Thirty eight (38) records without type value are populated base on location region code =  7 and school number.
+  
+Date: May 2004        By: N. Alvarez
+Reason:  Updated lschool coverage using lschool_board shape file provided by School Board Dept. Item City was added, Item Zip is now Zip4 with an Input/Output width of 10,10, C. Capacity  I/O 5, 5, I.   Addresses are standardized.
+  
+Date: September 2003  By: N. Alvarez
+Reason:  Nineteen (19) sites were added (charter, middle and administration) for schools No ; 0110, 0510, 0950, 1020, 2060, 3030, 3100, 3190, 3600, 3610, 5130, 5710, 6012, 6022, 6900, 7004, 7030, 7160 and 7371. Deleted twenty three (23) inactive sites for schools No ;  1961, 4631, 6050, 6911.8011, 8111, 9748, 8773, 9774, 9775, 9776, 9777, 9779, 9780, 9781, 9782, 9783, 9784. 9785, 9786, 9787, 9788, and 9789. Updated information: principal's or administrator's name contact type, phone number using Miami Dade County Pulblic Schools file. Changed address and zip code for schools No; 8021, 8301 and 9431 to 28201 SW 125 Ave, 33039.
+  
+Date: July 2003       By: A. Solis
+Reason:  Two new schools were added: Lamar Louise Curry Middle and John A. Ferguson Senior.  Information was provided by Miami-Dade Public Schools for the fiscal year 2003 - 2004.
+  
+Date: April 2003       By: A. Solis
+Reason:  Changed zip code to 33174 for Miami Coral Park Senior High and Miami Coral Park Adult as per request from Sohelia Ajabshir.
+  
+Date: March 2003       By: A. Solis
+Reason:  Changed elementary school name from Allapattah Elementary to Lenora B. Smith as per request from Debbie Lee, [dlee1@dadeschools.net].
+  
+Date: January 2003      By: N. Alvarez
+Reason:   Deleted Seventy five (75) schools sites, locations have been inactivated. Added site for the Miami-Dade School of Arts and a field for school capacity. OEM provided schools capacity in shapefile format.
+  
+Date: August 2002       By: N. Alvarez
+Reason:  Ten sites (Adminstration, Senior, and middle school) were added to Lschools Stl coverage.  Changed name of schools number  2701, 2901, 3421 and 4691. Changed address of school number 0300. Missing information: principal's or administrator's name contact type of sites or phone # for schools  0091 0120 8013 9301.
+  
+Date: July 2001         By: A. Solis
+Reason:  A shape file was provided by the School Board.  With few modifications became the LSCHOOLS coverage for the STL library. School  4801 was rename to Gertrude Edelman-Sabal Palm.
+  
+Date: Oct 2000         By: A. Solis
+Reason:  Correction to school name, changed from Hubert O. Sibley to Dr. Carlos M. Finlay Elementary.
+  
+Date: May 2000         By: A. Solis
+Reason:  19 new schools were added as per e-mail from Irene Tien, Miami Dade County Public Schools, of 04/25/00.
+  
+Date: May 2000         By: A. Solis
+Reason:  19 new schools were added as per e-mail from Irene Tien, Miami Dade County Public Schools, of 04/25/00.
+  
+Date: May 2000         By: A. Solis
+Reason:  19 new schools were added as per e-mail from Irene Tien, Miami Dade County Public Schools, of 04/25/00.
+  
+Date: August 1999      By: A. Solis
+Reason:  Two addresses were corrected as per memo of July 7, 1999.
+  
+Date: July 1999        By: A. Solis
+Reason:  New text file sent by Miami Dade County Public Schools, as a result 25 new schools were added and 5 schools were deleted.
+  
+Date: June 1998        By: B. Khan
+Reason:  To add by school code: 6040, 9778, 9413, 2911, 0070, 9612, 9734, 9733, 9019, 9719, 7811, 0090 and 8261 and delete points: Miramar Elem, Buena Vista Elem, US South Command (Elem, Middle and Senior), and made some additional changes such: as relocating, etc.
+  
+Date: June 1997        By: Bibi Khan
+Reason:  Add and delete data points and added three items (STE_RM, X-COORD and Y-COORD).
+  
+Reviews_Applied_to_Data:
+Data is reviewed by GIS technical Support , STL Data administrator and GIS Metadata Administrator.
+Data was reviewed by the GIS Data Administrator and GIS Metadata Administrator.
+  
+Notes:
+On June 2001, a shape file, schl0501.shp, was provided by Jose Gonzalez from the School Board. This shapefile became the new LSCHOOLS coverage. Both files (schl0501.shp and LSCHOOLS) were compared in detail to make sure that previous schools would not be missing from the new LSCHOOLS coverage. Items PRINCIPAL, CONTACT, and PHONE were adopted from the shape file. Item STE_RM was deleted from LSCHOOLS..
+ARCEDIT and digital orthophotography was used to move the labels to the exact location, instead of showing the labels on the streets.
+  
+Originally data was provided by the School Board in a txt format and it was geocoded first to the property layer and those rejected addresses were then geocoded to Dade County Street Network. Periodically this data is updated as per memos from Ms. Marie Jean-Francois, Intelligence Analysis Section, phone 305-471-2752.
+  
+The phone book was also used, to verify some of the new informaton. Facility type for Charter schools is the combination of school number and location with region number = 7. My Doan also called on the phone and used the web sites to verify information.</supplinf>
+        </descript>
+        <status>
+            <progress>In work</progress>
+            <update>Biannually</update>
+        </status>
+        <spdom>
+            <bounding>
+                <westbc>-80.506606</westbc>
+                <eastbc>-80.122976</eastbc>
+                <northbc>25.973044</northbc>
+                <southbc>25.439867</southbc>
+            </bounding>
+        </spdom>
+        <keywords>
+            <theme>
+                <themekt>None</themekt>
+                <themekey>Miami-Dade County Public Schools, Locations</themekey>
+            </theme>
+            <theme>
+                <themekt>None</themekt>
+                <themekey>Miami Dade County, South  Florida</themekey>
+            </theme>
+            <theme>
+                <themekt>ISO 19115 Topic Categories</themekt>
+                <themekey>location</themekey>
+            </theme>
+        </keywords>
+        <accconst>None</accconst>
+        <useconst>None</useconst>
+        <ptcontac>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>Miami Dade County / Information Technology</cntorg>
+                    <cntper>Clare Sibori</cntper>
+                </cntorgp>
+            </cntinfo>
+        </ptcontac>
+        <ptcontac>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>Miami - Dade County Public Schools</cntorg>
+                    <cntper>Ignacio A. Cano</cntper>
+                </cntorgp>
+                <cntpos>Coordinator I</cntpos>
+            </cntinfo>
+        </ptcontac>
+        <ptcontac>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>Miami - Dade County Public Schools</cntorg>
+                    <cntper>Jenny Murillo</cntper>
+                </cntorgp>
+                <cntpos>Director I</cntpos>
+            </cntinfo>
+        </ptcontac>
+        <browse>
+            <browsen>http://www.dadeschools.net/schools/schoolinformation/Default.asp#list</browsen>
+            <browsed>Miami-Dade County Public Schools</browsed>
+            <browset>URL</browset>
+        </browse>
+        <datacred>Miami-Dade County GIS Technical Support Group</datacred>
+        <native> Version 6.2 (Build 9200) ; Esri ArcGIS 10.7.1.11595</native>
+    </idinfo>
+    <spdoinfo>
+        <direct>Vector</direct>
+        <ptvctinf>
+            <sdtsterm>
+                <sdtstype>Entity point</sdtstype>
+                <ptvctcnt>446</ptvctcnt>
+            </sdtsterm>
+        </ptvctinf>
+        <rastinfo/>
+    </spdoinfo>
+    <eainfo>
+        <detailed>
+            <enttyp>
+                <enttypl>esde1.DCPS.SchoolSite</enttypl>
+            </enttyp>
+            <attr>
+                <attrlabl>OBJECTID</attrlabl>
+                <attrdef>Internal feature number.</attrdef>
+                <attrdefs>Esri</attrdefs>
+                <attrdomv>
+                                        
+                    <udom>Sequential unique whole numbers that are automatically generated.</udom>
+                                    
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>Shape</attrlabl>
+                <attrdef>Feature geometry.</attrdef>
+                <attrdefs>ESRI</attrdefs>
+                <attrdomv>
+                                        
+                    <udom>Coordinates defining the features.</udom>
+                                    
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>FOLIO</attrlabl>
+                <attrdef>Property Folio Number</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>ID</attrlabl>
+                <attrdef>School Location Number</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>NAME</attrlabl>
+                <attrdef>Facility Name</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>CAMPUS</attrlabl>
+                <attrdef>Campus name if multiple facilities in same location</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>ADDRESS</attrlabl>
+                <attrdef>Facility address</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>UNIT</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>CITY</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>ZIPCODE</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>EMAIL</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>PHONE</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>TYPE</attrlabl>
+                <attrdef>Facility Type</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>GRADES</attrlabl>
+                <attrdef>Grades at facility</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>CAPACITY</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>ENROLLMNT</attrlabl>
+                <attrdef>Enrollment</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>REGION</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>LAT</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>LON</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>POINT_X</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>CREATEDBY</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>CREATEDDATE</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>MODIFIEDBY</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>MODIFIEDDATE</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>GlobalID</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>POINT_Y</attrlabl>
+            </attr>
+        </detailed>
+        <overview>
+            <eaover>TYPE-Type of school values
+A - Administration
+Alt - Alternative
+E- Elementary
+E &amp; PLC - Elementary and Primary Learning Center
+K-8 - Kindergarten through eighth grade.
+K-8 &amp; PLC - Kindergarten through eighth grade and Primary Learning Center
+M- Middle
+O- Other/Vocational
+PLC- Primary Learning Centers
+S- Senior</eaover>
+        </overview>
+    </eainfo>
+    <metainfo>
+        <metd>20230714</metd>
+        <metfrd>20151001</metfrd>
+        <metc>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>Miami - Dade County Public Schools</cntorg>
+                    <cntper>Ignacio A. Cano</cntper>
+                </cntorgp>
+                <cntpos>Coordinator I</cntpos>
+            </cntinfo>
+        </metc>
+        <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+        <metstdv>FGDC-STD-001-1998</metstdv>
+        <mettc>local time</mettc>
+    </metainfo>
+</metadata>

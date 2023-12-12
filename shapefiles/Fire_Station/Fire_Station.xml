@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8"?><metadata>
+    <idinfo>
+        <citation>
+            <citeinfo>
+                <origin/>
+                <title>psde2.AMBATCH.FireStation</title>
+                <geoform>vector digital data</geoform>
+                <pubinfo>
+                    <pubplace/>
+                </pubinfo>
+            </citeinfo>
+        </citation>
+        <descript>
+            <abstract>A point feature class of Miami-Dade County Operated Fire and Rescue Stations that provide emergency or administrative services to the public. Not every station has rescue services. Some stations have administrative responsibilities. Each station is responsible for a designated area (grids).Updated: Annually The data was created using: Projected Coordinate System: WGS_1984_Web_Mercator_Auxiliary_SphereProjection: Mercator_Auxiliary_Sphere</abstract>
+            <purpose>A point feature class of Miami-Dade County Operated Fire and Rescue Stations that provide emergency or administrative services to the public.</purpose>
+            <supplinf>Procedures_Used:
+Address-match data to Property, geocoded rejects to the street centerlines, then align points to property where available.
+
+Revisions:
+Date May 2021       By: Josh Brashears
+Reason:  Updated address of station 29 to 351 SW 107th Ave, moved the point, and updated associated attributes.
+
+Date April 2020             By: Daniel Alvarez de la Campa
+Reason:  Added Station 41 and populated attributes. Changed address for Station 62 to 14251 OLD CUTLER RD.
+
+Date September 2018       By: Josh Brashears
+Reason:  Added Station 18.  Made corrections to MUNICID values to match MDC.Municipality_poly (the field is Text with width 2 and the single-digit values needed leading zeroes.)
+
+Date September 2017       By: Josh Brashears
+Reason:  Several of the below updates were somehow rolled back or perhaps not completed as described below.  The following 3 fire stations were re-positioned over their correct locations:  62, 40, and 64.  Station 62's point was incorrectly positioned over 7020 SW 144TH ST and now it is over 7055 SW 144TH ST as per its address.  Fire station 62 was telephoned on 9/20/2017 to confirm they are on the NE corner of Old Cutler Rd and SW 144TH ST in a trailer.  The point for station 40 was incorrectly positioned over 901 SW 62ND AVE and now it is over 975 SW 62ND AVE as per its address.  Fire station 64 needed its address changed from 8205 COMMERCE WAY to 15325 NW 77TH CT and the point moved accordingly (this change is noted below as of April 2016 but must have been rolled back.)  The lat, lon, x, and y were updated manually.  Additionally, many of the NAME values were updated (e.g. Goulds was changed to Princeton, Golden Glades was changed to Norland, etc.  The names now reflect what is written on the front of the fire station).  Station 73 (Fireboat) physically moved to 903 S AMERICA WAY recently so their address was updated and point moved.  Station 41 needed to be deleted - it is no longer a physical fire station.  This division chief (Ops North) is at station 63.
+
+Date June 2017           By: April ROsier
+Reason: Moved Station 29 point to 10610 W Flagler St. Updated X, Y, LAT, and LONG at for that point.  
+
+Date January 2017       By: April Rosier
+Reason: Added new point for station Palmetto Bay North, 7055 SW 144TH ST and populated attributes.
+
+Date January 2017       By: April Rosier
+Reason: Added new point for station 70 Coconut Palm, 11451 SW 248TH ST and populated attributes.
+
+Date April 2016                         By: Diana Zalivchaya
+Reason: Points for stations 9, 14, 15, 21, 24, 32, 34, 40, 51, 53, 54, 57, 63, 76 were moved to the their correct locations.  Moved station 64 from 8205 COMMERCE WAY to 15325 NW 77TH CT. XY coordinates and Lat Lon were recalculated.
+
+September 2015        By Ivonne Rodriguez
+Names have been changed to proper cased and adding the number of the station if they have it  Ex. (Miami Fire Station 13).
+Many of the points were located outside of buildings all have been corrected to represent and identify Fire Stations locations within Miami-Dade County. LOT/LAT recalculated.
+
+Date September 2015              By: Victoria Calle
+Reason:  Created new point for station 70 Naranja, 11451 SW 248TH ST. Calculated XY and Lat Lon coordinates for that point.
+
+Date April 2015              By: Victoria Calle
+Reason:  Moved Station 27 from 7903 EAST DR to 1275 NE 79TH ST and Station 16 from 325 NW 2ND ST to 255 NW 4TH AVE. Recalculated XY and Lat Lon coordinates for that point.
+
+Date August 2014              By: Victoria Calle
+Reason:  Moved Golden Glades station from the street to the property and recalculated XY and Lat Lon coordinates for that point.
+
+Date February 2014              By: Josh Brashears
+Reason:  Added station 69 and populated attributes.
+
+Date September 2012              By: Josh Brashears
+Reason:  Added station 76 and populated attributes.
+
+Date September 2012              By: Alina Herrera/Josh Brashears
+Reason:  Updated the TYPE field, NAME field, and several addresses per MDFR. No feature edits were done - only attributes.
+
+Date March 2011              By: Josh Brashears
+Reason: Moved station 41 from the street centerline to its location over the actual building.
+
+Date June 2010                By: Josh Brashears
+Reason: Annual Hurricane Season update. Added fire stations 78 (Eastern Shores) and 88 (Support).  Also corrected the location of stations 13 (Old Headquarters) and 39 (Port of Miami).
+
+Date March 2008                By: Josh Brashears
+Reason: Added fire stations Trail, Highland Oaks, East Homestead, and Village of Homestead, and East Homestead. 7 Fire Stations have not been populated with a folio number since their exact location cannot be found without a physical field check.
+
+Date March 2006                By: Lilliam Vega &amp; Jeffrey Ruiz
+Reason: Added fire station FireBoat1.  Jeffrey populated available folios and aligned some stations to the Property.  Stations aligned to the street were could not be identified by from the Property layer or Orthos.
+
+Date: October 2006            By: GIS Technical Support Staff
+Reason: The data was converted from the legacy coverage format to the ArcGIS Geodatabase feature class format.
+
+Date: October 2006    By: Josh Brashears
+Reason: Moved station 59 into the proper grid and away from the street centerline to result in correct jurisdiction assignment for 911.
+
+Date: May 2006        By: MDFD and Jeffrey Ruiz
+Reason: Corrected Station 10 address from 75 NE 172nd st to 175 172nd St. Point is in its correct location.
+
+Date: April 2006      By: Lilliam Vega, Lois Ziemba, Jeff Ruiz
+Reason: Annual Hurricane update. Moved station 12 to its correct location at Miami-International Airport.
+
+Date: December 2005   By: Josh Brashears
+Reason: 911 user requested an update to the layer. Updated station 25 to reflect its correct address, new location, and changed type.  Added new station 60.
+
+Date: March 2005     By: Josh Brashears/Jeffrey Ruiz
+Reason: Made the addresses USPS standard.  Increased the width of the ADDRESS item to 30 so that addresses don't get cut off. Stations 58 and 64 were added as per Clare, station 52 name was corrected to South Miami Heights and station 45 city was changed to Doral by Jeffrey.
+
+Date: August 2004                 By: N. Alvarez
+Reason: Add City field as per OEM.
+
+Date: May 2003                    By: N. Alvarez
+Reason:  Converted lfirest.shp sent by Lilliam Vega to coverage. West Kendall station 57 was added.
+
+Date: Oct 2002                     By: Lilliam Vega
+Reason: Add new fire station 59.
+
+Date: May 2002                     By: Lilliam Vega
+Reason: Points were aligned to the property instead of street network due to conflict with traffic signals.  Added West Sunset station, correct station 24 and 54 address, change station 20, 24, 28, 51 and 54 zipcode, change station 12, 13, 25, 44, 45 and 87 type,
+corrected the munic code.  
+
+Date: June 2001                    By: B. Oung &amp; Kevin Reed
+Reason: To add station 55, the new HeadQuarter and change name on station 13.
+
+Date: April 2000                   By: Pedro Zanoguera
+Reason: To correct location of station 54
+
+Date: January 2000                 By: Pedro Zanoguera
+Reason: (1) To add station number 41. (2) To add station type T standing for Training Center.
+
+Date: December 1999                By: Pedro Zanoguera
+Reason: To add one new station: number 33 in Aventura.
+
+Date: April 1999                   By: Alina Solis
+Reason: To add 4 new stations: Honey Hill, South Miami Heights, Turnpike and Perrine.
+
+Date: April 1998                   By: Alina Solis
+Reason: To add zipcode when missing. To add 3 new stations: Doral, Fountaineble and Westchester.  To delete Station_Num 18.
+
+Date:  Feb. 1997                   By:  Paul Githuka
+Reason:  Service request for addition of proposed fire stations. Metadata by:  Sara Fortes - Dec. 1997
+
+Date:  Aug. 13, 1996               By:  Ivelisse Torres
+Reason:  Addition of new fire stations by geocoding new points and appending to existing ones (worked in conjunction with Idsa Blanco).
+
+Date:  1996                        By:  Lois Ziemba
+Revised as new stations are added or as requested by Barbara Matthews of The Fire Department.
+
+Reviews_Applied_to_Data:
+Data is reviewed by FIRE for correctness.  Then, by the GIS Data Administrator and GIS Metadata Administrator.
+
+Related_Spatial_and_Tabular_Data_Sets:
+This layer should be used with LFIREMUN (Municipal Fire Stations) to identify
+all Fire and Rescue stations within Miami-Dade County.
+
+Notes:
+Stations in this layer are all operated by Miami-Dade County,
+Fire and Resue department. Also, points should not be geocoded
+to the street network but to property.
+
+For additional information, please contact Miami-Dade County Fire and Rescue Department.</supplinf>
+        </descript>
+        <status>
+            <progress>In work</progress>
+        </status>
+        <spdom>
+            <bounding>
+                <westbc>-80.483236</westbc>
+                <eastbc>-80.122962</eastbc>
+                <northbc>25.966405</northbc>
+                <southbc>25.445837</southbc>
+            </bounding>
+        </spdom>
+        <keywords>
+            <theme>
+                <themekt>None</themekt>
+                <themekey>Fire &amp; Rescue Stations</themekey>
+            </theme>
+            <place>
+                <placekt>None</placekt>
+                <placekey>Miami-Dade County</placekey>
+                <placekey>Florida</placekey>
+            </place>
+        </keywords>
+        <accconst>Public Access.</accconst>
+        <useconst>Miami-Dade County provides this data for use "as is". The areas depicted by this map/data are approximate, and are not accurate to surveying or engineering standards. The maps/data shown here are for illustration purposes only and are not suitable for site-specific decision making. Information found here should not be used for making financial or any other commitments. Miami-Dade County provides this information with the understanding that it is not guaranteed to be accurate, correct or complete and conclusions drawn from such information are the sole responsibility of the user. While every effort has been made to ensure the accuracy, correctness and timeliness of materials presented, Miami-Dade County assumes no responsibility for errors or omissions, even if Miami-Dade County is advised of the possibility of such damage.</useconst>
+        <ptcontac>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>Miami-Dade Fire Rescue Department</cntorg>
+                    <cntper>Michelle Evins</cntper>
+                </cntorgp>
+                <cntvoice>(786) 331-4345</cntvoice>
+            </cntinfo>
+        </ptcontac>
+        <datacred>Miami-Dade County GIS Technical Support Group</datacred>
+        <native> Version 6.2 (Build 9200) ; Esri ArcGIS 10.7.1.11595</native>
+        <crossref>
+            <citeinfo>
+                <pubinfo>
+                    <pubplace/>
+                </pubinfo>
+            </citeinfo>
+        </crossref>
+    </idinfo>
+    <dataqual>
+        <attracc>
+            <attraccr>See Entity_Attribute_Information</attraccr>
+            <qattracc>
+                <attraccv>See Explanation</attraccv>
+                <attracce>Attribute accuracy is described, where present, with each attribute defined in the Entity and Attribute Section.</attracce>
+            </qattracc>
+        </attracc>
+        <logic>Point features present.</logic>
+        <complete>This coverage only contains Miami-Dade County Operated Fire and Rescue stations.</complete>
+        <posacc>
+            <horizpa>
+                <horizpar>Is +/- 5 feet, which is based on the property planimetric layer.</horizpar>
+            </horizpa>
+        </posacc>
+        <lineage>
+            <srcinfo>
+                <srcscale>0</srcscale>
+                <typesrc>None</typesrc>
+            </srcinfo>
+            <procstep>
+                <procdesc>DRUIZJ RENAME LFIRST2 LFIREST</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060404</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>DRUIZJ DOCUMENT LFIREST COPY /DEV_STLFILES/DATA2/PRD/COVERS/LFIREST DRUIZJ</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060404</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>DRUIZJ COPY LFIREST LFIRST2 SINGLE</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060404</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>RUIZJ SHAPEARC LFIREST XXTEMP SUB</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060404</procdate>
+                <srcprod>None</srcprod>
+                <proccont>
+                    <cntinfo>
+                        <cntorgp>
+                            <cntorg>Miami-Dade County, Fire</cntorg>
+                            <cntper>Michelle Evins</cntper>
+                        </cntorgp>
+                        <cntvoice>(786) 331-4345</cntvoice>
+                        <cntemail>evinsm@miamidade.gov</cntemail>
+                    </cntinfo>
+                </proccont>
+            </procstep>
+            <procstep>
+                <procdesc>DRUIZJ IMPORT COVER LFIRESTGDB.E00 LFIREST</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060404</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>RUIZJ BUILD XXTEMP POINT</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060404</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>DRUIZJ IMPORT COVER LFIREST.E00 LFIREST</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060404</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>RUIZJ RENAME XXTEMP LFIREST</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060404</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>DRUIZJ ADDXY LFIREST</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060404</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>DRUIZJ DOCUMENT LFIREST UPDATE DRUIZJ</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060404</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>DRUIZJ EXPORT COVER LFIREST LFIREST.E00</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060404</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>DRUIZJ DOCUMENT LFIREST UPDATE DRUIZJ</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060405</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>DRUIZJ EXPORT COVER LFIREST LFIREST.E00</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060405</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>DRUIZJ DOCUMENT LFIREST UPDATE DRUIZJ</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060405</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>DRUIZJ EXPORT COVER LFIREST LFIREST.E00</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060405</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>GISDML DOCUMENT LFIREST UPDATE GISDML</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060412</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>GISDML COPY ~RUIZJ/COVERS/LFIREST LFIREST</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060412</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>RUIZJ IMPORT COVER LFIREST.E00 LFIREST</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060412</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>RUIZJ DOCUMENT LFIREST UPDATE RUIZJ</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060412</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>GISDML EXPORT COVER $PROD/COVERS/LFIREST $PROD/PUBLIC/E00/LFIREST NONE</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060415</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>RUIZJ COPY $PROD/COVERS/LFIREST</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060517</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>GISDML DOCUMENT LFIREST UPDATE GISDML</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060517</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>RUIZJ DOCUMENT LFIREST UPDATE RUIZJ</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060517</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>GISDML COPY ~RUIZJ/COVERS/LFIREST</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060517</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>GISDML EXPORT COVER $PROD/COVERS/LFIREST $PROD/PUBLIC/E00/LFIREST NONE</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060520</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>BRASHJ IMPORT COVER LFIREST 
+				 
+				</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060814</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>BRASHJ COPY $PROD/COVERS/LFIREST</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060814</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>BRASHJ ARCEDIT  
+				</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060818</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>BRASHJ BUILD LFIREST POINT</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060818</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>BRASHJ BUILD LFIREST POINT</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060821</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>BRASHJ ARCEDIT  
+				</procdesc>
+                <srcused>None</srcused>
+                <procdate>20060821</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>DBRASHJ DOCUMENT LFIREST UPDATE DBRASHJ</procdesc>
+                <srcused>None</srcused>
+                <procdate>20061010</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>DBRASHJ IMPORT COVER LFIREST_R32.E00 LFIREST</procdesc>
+                <srcused>None</srcused>
+                <procdate>20061010</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>DRUIZJ COPY ~DBRASHJ/CAD911_DEV/COVERS/R32/LFIREST</procdesc>
+                <srcused>None</srcused>
+                <procdate>20061011</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>RUIZJ IMPORT COVER LFIREST.E00 LFIREST</procdesc>
+                <srcused>None</srcused>
+                <procdate>20061011</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>GISDML DOCUMENT LFIREST UPDATE GISDML</procdesc>
+                <srcused>None</srcused>
+                <procdate>20061013</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>GISDML DOCUMENT LFIREST UPDATE GISDML</procdesc>
+                <srcused>None</srcused>
+                <procdate>20061013</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>GISDML COPY ~RUIZJ/COVERS/LFIREST LFIREST</procdesc>
+                <srcused>None</srcused>
+                <procdate>20061013</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+            <procstep>
+                <procdesc>GISDML EXPORT COVER $PROD/COVERS/LFIREST $PROD/PUBLIC/E00/LFIREST NONE</procdesc>
+                <srcused>None</srcused>
+                <procdate>20061014</procdate>
+                <srcprod>None</srcprod>
+            </procstep>
+        </lineage>
+    </dataqual>
+    <spdoinfo>
+        <direct>Vector</direct>
+        <ptvctinf>
+            <sdtsterm>
+                <sdtstype>Entity point</sdtstype>
+                <ptvctcnt>0</ptvctcnt>
+            </sdtsterm>
+        </ptvctinf>
+    </spdoinfo>
+    <eainfo>
+        <detailed>
+            <enttyp>
+                <enttypl>psde2.AMBATCH.FireStation</enttypl>
+                <enttypd>Miami-Dade Operated Fire &amp; Rescue Station</enttypd>
+            </enttyp>
+            <attr>
+                <attrlabl>OBJECTID</attrlabl>
+                <attrdef>Internal feature number.</attrdef>
+                <attrdefs>ESRI</attrdefs>
+                <attrdomv>
+                                        
+                    <udom>Sequential unique whole numbers that are automatically generated.</udom>
+                                    
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>FOLIO</attrlabl>
+                <attrdef>Property Folio</attrdef>
+                <attrdefs>Prop_ptx</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>ID</attrlabl>
+                <attrdef>Station Number</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>NAME</attrlabl>
+                <attrdef>Fire Station Name</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>ADDRESS</attrlabl>
+                <attrdef>Address</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>CITY</attrlabl>
+                <attrdef>City</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>ZIPCODE</attrlabl>
+                <attrdef>ZipCode</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>MUNICID</attrlabl>
+                <attrdef>Municipality Code</attrdef>
+                <attrdefs>tblMunicipality</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>TYPE</attrlabl>
+                <attrdef>Type of Station</attrdef>
+                <attrdomv>
+                                        
+                    <edom>
+                                                
+                        <edomv>A</edomv>
+                                                
+                        <edomvd>Air Rescue</edomvd>
+                                            
+                    </edom>
+                                        
+                    <edom>
+                                                
+                        <edomv>B</edomv>
+                                                
+                        <edomvd>Both (Rescue &amp; Suppression)</edomvd>
+                                            
+                    </edom>
+                                        
+                    <edom>
+                                                
+                        <edomv>H</edomv>
+                                                
+                        <edomvd>Headquarter</edomvd>
+                                            
+                    </edom>
+                                        
+                    <edom>
+                                                
+                        <edomv>R</edomv>
+                                                
+                        <edomvd>Rescue</edomvd>
+                                            
+                    </edom>
+                                        
+                    <edom>
+                                                
+                        <edomv>S</edomv>
+                                                
+                        <edomvd>Suppression</edomvd>
+                                            
+                    </edom>
+                                        
+                    <edom>
+                                                
+                        <edomv>T</edomv>
+                                                
+                        <edomvd>Training</edomvd>
+                                            
+                    </edom>
+                                    
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>LAT</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>LON</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>POINT_X</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>POINT_Y</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>SHAPE</attrlabl>
+                <attrdef>Feature geometry.</attrdef>
+                <attrdefs>ESRI</attrdefs>
+                <attrdomv>
+                                        
+                    <udom>Coordinates defining the features.</udom>
+                                    
+                </attrdomv>
+            </attr>
+        </detailed>
+        <overview>
+            <eaover>The following fields are the attribute for this feature class:
+
+ITEM         WIDTH/TYPE     DESCRIPTION
+====         ============      ===========
+Folio                    13, T           Property Folio
+ID                      2, 2, SI         Station number
+Name                  25, T          Station Name
+Address               30, T          Station street address
+City                      25, T          Municipal name
+ZipCode            4, 5,  I           5 digit zip code
+MunicID            2, 2, SI          Municipality code
+Type                 1, 1, T           Station type:
+                                                   ( Fire Stations:
+                                                       A = Air Rescue,
+                                                       B = Both Rescue &amp; Suppression  
+                                                       R = Rescue
+                                                       S = Suppression
+
+                                                     Other Facilities:
+                                                       H = Headquarters
+                                                        L = Logistical Support
+                                                       T = Training Center)
+
+LAT                  8,19, 5, D      Latitude
+LON                 8,19, 5, D      Longitude
+POINT_X         8,19,11,D      X coordinate
+POINT_Y         8,19,11,D      Y coordinate</eaover>
+        </overview>
+    </eainfo>
+    <metainfo>
+        <metd>20210506</metd>
+        <metrd>20070405</metrd>
+        <metc>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>Fire Department</cntorg>
+                    <cntper>Michelle Evins</cntper>
+                </cntorgp>
+                <cntvoice>(786) 331-4345</cntvoice>
+                <cntemail>evinsm@miamidade.gov</cntemail>
+            </cntinfo>
+        </metc>
+        <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+        <metstdv>FGDC-STD-001-1998</metstdv>
+        <mettc>local time</mettc>
+        <metac>For Public Access</metac>
+        <metuc>For Public Access</metuc>
+        <metsi>
+            <metscs>None</metscs>
+            <metsc>Unclassified</metsc>
+            <metshd>None</metshd>
+        </metsi>
+    </metainfo>
+</metadata>
