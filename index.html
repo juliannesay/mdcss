@@ -311,11 +311,11 @@ body::before {
 
    <h4>Weather Events By Severity:</h4>
    <select id="filter-event-severity">
-      <option value="">All Severities</option>
-      <option value="Minor">Minor</option>
-      <option value="Moderate">Moderate</option>
-      <option value="Severe">Severe</option>
-      <option value="Extreme">Extreme</option>
+   <option value="">All Severities</option>
+   <option value="Minor">Minor</option>
+   <option value="Moderate">Moderate</option>
+   <option value="Severe">Severe</option>
+   <option value="Extreme">Extreme</option>
    </select>
 
    <br/><br/><button id="clear-filters" class="filterBTN">Clear Filters</button></div><div id="viewDiv" style="max-width: 900px; height: 600px; margin: 20px auto;">
@@ -325,13 +325,13 @@ body::before {
    document.addEventListener("DOMContentLoaded", function() {
    // Toggle Layer Visibility
    document.getElementById("toggle-hospitals").addEventListener("change", function() {
-      hospitalLayer.visible = this.checked;
+      hospitalLayer.visible = this.unchecked;
    });
    document.getElementById("toggle-shelters").addEventListener("change", function() {
-      shelterLayer.visible = this.checked;
+      shelterLayer.visible = this.unchecked;
    });
    document.getElementById("toggle-fire-ems").addEventListener("change", function() {
-      fireEmsLayer.visible = this.checked;
+      fireEmsLayer.visible = this.unchecked;
    });
    document.getElementById("toggle-hazards").addEventListener("change", function() {
       hazardsLayer.visible = this.checked;
