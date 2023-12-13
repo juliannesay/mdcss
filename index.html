@@ -74,7 +74,7 @@ body::before {
 }
 </style>
    
-<!--importing thr css and libraries for esri.js-->
+<!--importing the css and libraries for esri.js-->
 <link href="https://js.arcgis.com/4.27/esri/themes/light/main.css" rel="stylesheet"/>
 <script src="https://js.arcgis.com/4.27/"></script>
    
@@ -325,13 +325,13 @@ body::before {
    document.addEventListener("DOMContentLoaded", function() {
    // Toggle Layer Visibility
    document.getElementById("toggle-hospitals").addEventListener("change", function() {
-      hospitalLayer.visible = this.unchecked;
+      hospitalLayer.visible = this.checked;
    });
    document.getElementById("toggle-shelters").addEventListener("change", function() {
-      shelterLayer.visible = this.unchecked;
+      shelterLayer.visible = this.checked;
    });
    document.getElementById("toggle-fire-ems").addEventListener("change", function() {
-      fireEmsLayer.visible = this.unchecked;
+      fireEmsLayer.visible = this.checked;
    });
    document.getElementById("toggle-hazards").addEventListener("change", function() {
       hazardsLayer.visible = this.checked;
@@ -427,6 +427,6 @@ body::before {
       updateEventsFilter();
    });
    });
-
+      
 </body>
 </html>
