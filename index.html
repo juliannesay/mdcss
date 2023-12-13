@@ -63,212 +63,210 @@ body {
 }
 
 body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(252, 251, 244, 0.65);
-    z-index: -1;
+   content: '';
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background: rgba(252, 251, 244, 0.65);
+   z-index: -1;
 }
-
 </style>
+   
 <!--importing thr css and libraries for esri.js-->
 <link href="https://js.arcgis.com/4.27/esri/themes/light/main.css" rel="stylesheet"/>
-<script src="https://js.arcgis.com/4.27/">
-</script>
+<script src="https://js.arcgis.com/4.27/"></script>
+   
 <!--loading the modules-->
-
-</script>
 <script>
-   require(["esri/config" ,"esri/Map", "esri/views/MapView", "esri/widgets/Locate", "esri/widgets/Search", "esri/layers/FeatureLayer", "esri/widgets/Legend", "esri/widgets/Editor", "esri/widgets/Expand"], (esriConfig, Map, MapView, Locate, Search, FeatureLayer, Legend, Editor, Expand) => {
+   require(["esri/config" ,"esri/Map", "esri/views/MapView", "esri/widgets/Locate", "esri/widgets/Search", "esri/layers/FeatureLayer", "esri/widgets/Legend", "esri/widgets/Editor", "esri/widgets/Expand"], 
+           (esriConfig, Map, MapView, Locate, Search, FeatureLayer, Legend, Editor, Expand) => {
             
             //adding in API Key
             esriConfig.apiKey = "AAPK50bd33a7f78c4bd98439817346c45150YxOaoF_yiyzXk7-A7yCiGXxGKE8ywmKK9LJdIaiT30z5N5ry4n9ghqL74FTTcDK7";
 
             //creating the map
             const map = new Map({
-                basemap: "osm"
+               basemap: "osm"
             });
 
-             //This block of code centers on MDC and sets the zoom
-             const view = new MapView({
-                container: "viewDiv",  
-                    map: map, 
-                    center: [ -80.20469, 25.76091],  // Lon and lat of MDC
-                    zoom: 10
-                });
+            //This block of code centers on MDC and sets the zoom
+            const view = new MapView({
+               container: "viewDiv",  
+               map: map, 
+               center: [ -80.20469, 25.76091],  // Lon and lat of MDC
+               zoom: 10
+            });
             
             //create the const for the search widget
-             const searchWidget = new Search({
-             view: view
-             });
+            const searchWidget = new Search({
+               view: view
+            });
 
             //add and position the search widget
             view.ui.add(searchWidget, {
-            position: "top-right",
+               position: "top-right",
             });
             
             //create the const for the locate widget
             const locateBtn = new Locate({
-                view: view
+               view: view
             });
 
             // Add the locate widget to the top right corner of the view
             view.ui.add(locateBtn, {
-                position: "top-right"
+               position: "top-right"
             });
 
             // Add legend widget
             const legend = new Legend({
-            view: view,
-            style: "card"
+               view: view,
+               style: "card"
             });
 
             // Create an Expand widget for the Legend
             const legendExpand = new Expand({
-            view: view,
-            content: legend,
-            expandIconClass: "esri-icon-layer-list",
-            group: "bottom-left"
+               view: view,
+               content: legend,
+               expandIconClass: "esri-icon-layer-list",
+               group: "bottom-left"
             });
 
             view.ui.add(legendExpand, "bottom-left")
 
-
-// Define a pop-up for the 'Events Ordered by Size and Severity' layer
-const popupEvents = {
-    "title": "Event Information",
-    "content": "<b>Type:</b> {Event}<br>" +
+            // Define a pop-up for the 'Events Ordered by Size and Severity' layer
+            const popupEvents = {
+               "title": "Event Information",
+               "content": "<b>Type:</b> {Event}<br>" +
                "<b>Severity:</b> {Severity}<br>" +
                "<b>Summary:</b> {Summary}<br>" +
                "<b>Last Updated:</b> {Updated}<br>" +
                "<b>Effective Time:</b> {Start}<br>" +
                "<b>Expiration Time:</b> {End_}<br>"
-};
+            };
+              
+            // Adding 'Events Ordered by Size and Severity' layer to the map
+            window.eventsLayer = new FeatureLayer({
+               url: "https://services9.arcgis.com/RHVPKKiFTONKtxq3/arcgis/rest/services/NWS_Watches_Warnings_v1/FeatureServer/6",
+               outFields: ["Event", "Severity", "Summary", "Updated", "Start", "End_"],
+               popupTemplate: popupEvents
+            });
+              
+            // Adding the new layer first to ensure it is in the back
+            map.add(eventsLayer);
 
-// Adding 'Events Ordered by Size and Severity' layer to the map
-window.eventsLayer = new FeatureLayer({
-    url: "https://services9.arcgis.com/RHVPKKiFTONKtxq3/arcgis/rest/services/NWS_Watches_Warnings_v1/FeatureServer/6",
-    outFields: ["Event", "Severity", "Summary", "Updated", "Start", "End_"],
-    popupTemplate: popupEvents
-});
-
-// Adding the new layer first to ensure it is in the back
-map.add(eventsLayer);
-// Define a pop-up for the hospitals layer
-const popupHospital = {
-    "title": "Hospital Information",
-    "content": "<b>Name:</b> {NAME}<br>" +
+            // Define a pop-up for the hospitals layer
+            const popupHospital = {
+               "title": "Hospital Information",
+               "content": "<b>Name:</b> {NAME}<br>" +
                "<b>Address:</b> {ADDRESS}<br>" +
                "<b>City:</b> {CITY}, <b>ZIP Code:</b> {ZIPCODE}<br>" +
                "<b>Phone:</b> {PHONE}<br>" +
                "<b>Status:</b> {STATUS}<br>" +
                "<b>Bed Count:</b> {BED}<br>" +
                "<b>Emergency Room:</b> {EROOM}<br>"
-};
+            };
 
-// Adding hosted data to the layer
-window.hospitalLayer = new FeatureLayer({
-    url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/MDCSS/FeatureServer/0",
-    outFields: ["NAME", "ADDRESS", "CITY", "ZIPCODE", "PHONE", "STATUS", "BED", "EROOM"],
-    popupTemplate: popupHospital
-});
+            // Adding hosted data to the layer
+            window.hospitalLayer = new FeatureLayer({
+               url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/MDCSS/FeatureServer/0",
+               outFields: ["NAME", "ADDRESS", "CITY", "ZIPCODE", "PHONE", "STATUS", "BED", "EROOM"],
+               popupTemplate: popupHospital
+            });
 
-// Adding the constructor for the feature layer
-map.add(hospitalLayer);
+            // Adding the constructor for the feature layer
+            map.add(hospitalLayer);
 
-
-const popupShelter = {
-    "title": "Storm Shelter Information",
-    "content": "<b>Name:</b> {NAME}<br>" +
+            // Define a pop-up for the shelters layer
+            const popupShelter = {
+               "title": "Storm Shelter Information",
+                "content": "<b>Name:</b> {NAME}<br>" +
                "<b>Address:</b> {ADDRESS}<br>" +
                "<b>City:</b> {CITY}, <b>ZIP Code:</b> {ZIPCODE}<br>" +
                "<b>Phone:</b> {PHONE}<br>" +
                "<b>Status:</b> {STATUS}<br>" +
                "<b>Capacity:</b> {CAPACITY}"
-};
+            };
 
-    // Adding hosted data to the layer
-window.shelterLayer = new FeatureLayer({
-    url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/MDCSS/FeatureServer/1",
-    outFields: ["NAME", "ADDRESS", "CITY", "ZIPCODE", "PHONE", "STATUS", "CAPACITY"],
-    popupTemplate: popupShelter
-});
+            // Adding hosted data to the layer
+            window.shelterLayer = new FeatureLayer({
+               url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/MDCSS/FeatureServer/1",
+               outFields: ["NAME", "ADDRESS", "CITY", "ZIPCODE", "PHONE", "STATUS", "CAPACITY"],
+               popupTemplate: popupShelter
+            });
 
-// Adding the constructor for the feature layer
-map.add(shelterLayer);
+            // Adding the constructor for the feature layer
+            map.add(shelterLayer);
 
-// Define a pop-up for the Fire and EMS layer
-const popupFireEMS = {
-    "title": "Fire and EMS Information",
-    "content": "<b>Name:</b> {NAME}<br>" +
+            // Define a pop-up for the Fire and EMS layer
+            const popupFireEMS = {
+               "title": "Fire and EMS Information",
+               "content": "<b>Name:</b> {NAME}<br>" +
                "<b>Address:</b> {ADDRESS}<br>" +
                "<b>City:</b> {CITY}, <b>ZIP Code:</b> {ZIPCODE}<br>"
-};
+            };
 
-// Adding fire and ems layer to the map
-window.fireEmsLayer = new FeatureLayer({
-    url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/MDCSS/FeatureServer/2",
-    outFields: ["NAME", "ADDRESS", "CITY", "ZIPCODE"],
-    popupTemplate: popupFireEMS
-});
+            // Adding fire and ems layer to the map
+            window.fireEmsLayer = new FeatureLayer({
+               url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/MDCSS/FeatureServer/2",
+               outFields: ["NAME", "ADDRESS", "CITY", "ZIPCODE"],
+               popupTemplate: popupFireEMS
+            });
 
-// Adding the constructor for the fire and ems layer
-map.add(fireEmsLayer);
+            // Adding the constructor for the fire and ems layer
+            map.add(fireEmsLayer);
 
-// Define a pop-up for the Hazards layer
-const popupHazards = {
-    "title": "Hazard Information",
-    "content": "<b>Type:</b> {Hazard_Type}<br>" +
+            // Define a pop-up for the Hazards layer
+            const popupHazards = {
+               "title": "Hazard Information",
+               "content": "<b>Type:</b> {Hazard_Type}<br>" +
                "<b>Comments:</b> {Comments}<br>" +
                "<b>Latitude:</b> {Latitude}<br>" +
                "<b>Longitude:</b> {Longitude}<br>"
-};
+            };
 
-// Adding hosted data to the layer
-window.hazardsLayer = new FeatureLayer({
-    url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/MDCSS/FeatureServer/6",
-    outFields: ["Hazard_Type", "Comments", "Latitude", "Longitude"],
-    popupTemplate: popupHazards
-});
+            // Adding hosted data to the layer
+            window.hazardsLayer = new FeatureLayer({
+               url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/MDCSS/FeatureServer/6",
+               outFields: ["Hazard_Type", "Comments", "Latitude", "Longitude"],
+               popupTemplate: popupHazards
+            });
 
-// Adding the constructor for the feature layer
-map.add(hazardsLayer);
+            // Adding the constructor for the feature layer
+            map.add(hazardsLayer);
 
-// Create the Editor widget
-const editor = new Editor({
-      view: view,
-      container: "editorDiv",
-    });
+            // Create the Editor widget
+            const editor = new Editor({
+               view: view,
+               container: "editorDiv",
+            });
 
-    editor.layerInfos = [
-      {
-        layer: hospitalLayer,},{
-        layer: shelterLayer,
-      },{
-        layer: fireEmsLayer,
-      },{
-        layer: hazardsLayer,
-      },];
+            editor.layerInfos = [
+               {
+               layer: hospitalLayer,},{
+               layer: shelterLayer,
+               },{
+               layer: fireEmsLayer,
+               },{
+               layer: hazardsLayer,
+               },];
 
-      // Create an Expand widget for the Editor
-    const editorExpand = new Expand({
-      view: view,
-      content: editor,
-      expandIconClass: "esri-icon-edit",  // Icon for the expand widget
-      group: "top-left"
-    });
+            // Create an Expand widget for the Editor
+            const editorExpand = new Expand({
+               view: view,
+               content: editor,
+               expandIconClass: "esri-icon-edit",  // Icon for the expand widget
+               group: "top-left"
+            });
 
-    // Add the Editor widget to the view
-    view.ui.add(editorExpand, "top-right");
-
-        });
-
-  </script>
+            // Add the Editor widget to the view
+            view.ui.add(editorExpand, "top-right");
+   });
+</script>
 
 </head>
+   
 <body>
     <div style="text-align: center;">
         <img src="https://raw.githubusercontent.com/juliannesay/mdcss/main/Miami%20Dade%20County%20Storm%20Safe-logos_transparent.png" alt="Miami-Dade County Storm Safe" style="max-width: 25%; height: 25%;" />
