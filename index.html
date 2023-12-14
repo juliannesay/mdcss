@@ -277,10 +277,9 @@ body::before {
 
    <!--create div for the filter-->
    <div id="filter-section" style="text-align:center; margin-bottom:20px;">
-      
-   <h3>Layer Visibility and Status Filter:</h3>
-    
+
    <!-- Layer visibility checkboxes -->
+   <h3>Layer Visibility and Status Filter:</h3>
    <input id="toggle-hospitals" type="checkbox" checked/><label for="toggle-hospitals">Hospitals</label>
    <input id="toggle-shelters" type="checkbox" checked/><label for="toggle-shelters">Shelters</label>
    <input id="toggle-fire-ems" type="checkbox" checked/><label for="toggle-fire-ems">Fire and EMS</label>
@@ -326,13 +325,13 @@ body::before {
    document.addEventListener("DOMContentLoaded", function() {
    // Toggle Layer Visibility
    document.getElementById("toggle-hospitals").addEventListener("change", function() {
-      hospitalLayer.visible = this.checked;
+      hospitalLayer.visible = this.unchecked;
    });
    document.getElementById("toggle-shelters").addEventListener("change", function() {
-      shelterLayer.visible = this.checked;
+      shelterLayer.visible = this.unchecked;
    });
    document.getElementById("toggle-fire-ems").addEventListener("change", function() {
-      fireEmsLayer.visible = this.checked;
+      fireEmsLayer.visible = this.unchecked;
    });
    document.getElementById("toggle-hazards").addEventListener("change", function() {
       hazardsLayer.visible = this.checked;
