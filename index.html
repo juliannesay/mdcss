@@ -173,7 +173,7 @@ body::before {
                url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/MDCSS/FeatureServer/0",
                outFields: ["NAME", "ADDRESS", "CITY", "ZIPCODE", "PHONE", "STATUS", "BED", "EROOM"],
                popupTemplate: popupHospital,
-               minScale: 20000
+               minScale: 80000
             });
 
             // Adding the constructor for the feature layer
@@ -195,7 +195,7 @@ body::before {
                url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/MDCSS/FeatureServer/1",
                outFields: ["NAME", "ADDRESS", "CITY", "ZIPCODE", "PHONE", "STATUS", "CAPACITY"],
                popupTemplate: popupShelter,
-               minScale: 20000
+               minScale: 80000
             });
 
             // Adding the constructor for the feature layer
@@ -214,7 +214,7 @@ body::before {
                url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/MDCSS/FeatureServer/2",
                outFields: ["NAME", "ADDRESS", "CITY", "ZIPCODE"],
                popupTemplate: popupFireEMS,
-               minScale: 20000
+               minScale: 80000
             });
 
             // Adding the constructor for the fire and ems layer
