@@ -172,11 +172,12 @@ body::before {
             window.hospitalLayer = new FeatureLayer({
                url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/MDCSS/FeatureServer/0",
                outFields: ["NAME", "ADDRESS", "CITY", "ZIPCODE", "PHONE", "STATUS", "BED", "EROOM"],
-               popupTemplate: popupHospital
+               popupTemplate: popupHospital,
+               minScale: 7000
             });
 
             // Adding the constructor for the feature layer
-            //map.add(hospitalLayer);
+            map.add(hospitalLayer);
 
             // Define a pop-up for the shelters layer
             const popupShelter = {
@@ -193,11 +194,12 @@ body::before {
             window.shelterLayer = new FeatureLayer({
                url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/MDCSS/FeatureServer/1",
                outFields: ["NAME", "ADDRESS", "CITY", "ZIPCODE", "PHONE", "STATUS", "CAPACITY"],
-               popupTemplate: popupShelter
+               popupTemplate: popupShelter,
+               minScale: 7000
             });
 
             // Adding the constructor for the feature layer
-            //map.add(shelterLayer);
+            map.add(shelterLayer);
 
             // Define a pop-up for the Fire and EMS layer
             const popupFireEMS = {
@@ -211,11 +213,12 @@ body::before {
             window.fireEmsLayer = new FeatureLayer({
                url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/MDCSS/FeatureServer/2",
                outFields: ["NAME", "ADDRESS", "CITY", "ZIPCODE"],
-               popupTemplate: popupFireEMS
+               popupTemplate: popupFireEMS,
+               minScale: 7000
             });
 
             // Adding the constructor for the fire and ems layer
-            //map.add(fireEmsLayer);
+            map.add(fireEmsLayer);
 
             // Define a pop-up for the Hazards layer
             const popupHazards = {
@@ -280,9 +283,9 @@ body::before {
 
    <!-- Layer visibility checkboxes -->
    <h3>Layer Visibility and Status Filter:</h3>
-   <input id="toggle-hospitals" type="checkbox"><label for="toggle-hospitals">Hospitals</label>
-   <input id="toggle-shelters" type="checkbox"><label for="toggle-shelters">Shelters</label>
-   <input id="toggle-fire-ems" type="checkbox"><label for="toggle-fire-ems">Fire and EMS</label>
+   <input id="toggle-hospitals" type="checkbox" checked/><label for="toggle-hospitals">Hospitals</label>
+   <input id="toggle-shelters" type="checkbox" checked/><label for="toggle-shelters">Shelters</label>
+   <input id="toggle-fire-ems" type="checkbox" checked/><label for="toggle-fire-ems">Fire and EMS</label>
    <input id="toggle-hazards" type="checkbox" checked/><label for="toggle-hazards">Hazards</label>
    <input id="toggle-events" type="checkbox" checked/><label for="toggle-events"> Weather Events</label>
 
