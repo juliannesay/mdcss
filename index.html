@@ -325,13 +325,13 @@ body::before {
    document.addEventListener("DOMContentLoaded", function() {
    // Toggle Layer Visibility
    document.getElementById("toggle-hospitals").addEventListener("change", function() {
-      hospitalLayer.visible = this.unChecked;
+      hospitalLayer.visible = this.checked;
    });
    document.getElementById("toggle-shelters").addEventListener("change", function() {
-      shelterLayer.visible = this.unChecked;
+      shelterLayer.visible = this.checked;
    });
    document.getElementById("toggle-fire-ems").addEventListener("change", function() {
-      fireEmsLayer.visible = this.unChecked;
+      fireEmsLayer.visible = this.checked;
    });
    document.getElementById("toggle-hazards").addEventListener("change", function() {
       hazardsLayer.visible = this.checked;
